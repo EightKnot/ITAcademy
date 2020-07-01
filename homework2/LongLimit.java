@@ -1,4 +1,4 @@
-package HomeWork1;
+package HomeWork2;
 
 public class LongLimit {
     public static void main(String[] args) {

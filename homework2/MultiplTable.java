@@ -1,4 +1,4 @@
-package HomeWork1;
+package HomeWork2;
 
 public class MultiplTable {
     public static void main(String[] args) {
