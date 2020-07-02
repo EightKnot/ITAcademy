@@ -4,10 +4,10 @@ public class MultiplTable {
     public static void main(String[] args) {
         // Хочу таблицу умножения чисел от а до b, умноженных на (от с до d), в е ряда(-ов)
         int a = 1;
-        int b = 11;
+        int b = 9;
         int c = 1;
         int d = 10;
-        int e = 4;
+        int e = 2;
         int m = 0;
         if ((b - a + 1) % e == 0)
             m = (b - a + 1) / e;
@@ -33,6 +33,7 @@ public class MultiplTable {
                 }
             }
             a += m;
+            
         }
     }
 }

@@ -16,7 +16,7 @@ public class Peramnoz_2 {
         }
         for (int i = 0; i < user.length(); i++) {
             System.out.print(s[i]);
-            if (!(i > user.length() - 2))     // можно с do while
+            if (i < user.length() - 1)     // можно с do while
                 System.out.print(" * ");
             summ *= (int) s[i] - (int) '0';
         }
@@ -38,7 +38,7 @@ public class Peramnoz_2 {
         }
         for (int i = 0; i < user.length(); i++) {
             System.out.print(s[i]);
-            if (!(i > user.length() - 2))     // можно с do while
+            if (i < user.length() - 1)     // можно с do while
                 System.out.print(" * ");
             summ *= (int) s[i] - (int) '0';
         }

@@ -12,17 +12,17 @@ public class Exponent {
         int dig = Integer.parseInt(userDig.substring(0, indCh));
         int exp = Integer.parseInt(userDig.substring(indCh + 1, len));
         System.out.println("Число " + dig + " в степени " + exp + " равно " + Math.pow(dig, exp));
-    }
+//    }
 
     // Вариант по-проще:
     /*
         public static void main(String[] args) {
         System.out.println("Введите число, которое нужно возвести в степень:");
         Scanner user = new Scanner(System.in);
-        int dig = Integer.parseInt(user.nextLine());
+        int dig = user.nextInt();
         System.out.println("Введите степень, в которую нужно возвести число:");
-        int exp = Integer.parseInt(user.nextLine());
+        int exp = user.nextInt();
         System.out.println("Число " + dig + " в степени " + exp + " равно " + Math.pow(dig, exp));
+    */
     }
-     */
 }
