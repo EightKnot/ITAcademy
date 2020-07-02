@@ -20,5 +20,10 @@ public class LongLimit {
         } while (!error);
         System.out.println("Значение до переполнения\n" + a);
         System.out.println("Значение после переполнения\n" + a * 3);
+        // Вариант 2 после просмотра занятий
+
+
+
+
     }
 }
