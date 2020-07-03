@@ -31,14 +31,17 @@ public class Exponent {
         userDig = user.nextLine();
         indCh = userDig.indexOf(" ");
         len = userDig.length();
-        double digits = Integer.parseInt(userDig.substring(0, indCh));
-        double expo = Integer.parseInt(userDig.substring(indCh + 1, len));
+        double digits = 0;
+        double expo = 0;
         double result = 0;
         try {
+            digits = Double.parseDouble(userDig.substring(0, indCh));
+            expo = Double.parseDouble(userDig.substring(indCh + 1, len));
             result = Math.pow(digits, expo);
         }
         catch (NumberFormatException zu) {
             System.out.println("Веденные данные не соответствыуют типу double...");
+            return;
         }
         catch (ArithmeticException e) {
             System.out.println("Произведено недопустимое арифметическое действие...\n" + e.getMessage());

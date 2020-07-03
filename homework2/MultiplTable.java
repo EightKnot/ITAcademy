@@ -33,7 +33,6 @@ public class MultiplTable {
                 }
             }
             a += m;
-            
         }
     }
 }
