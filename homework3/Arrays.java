@@ -12,6 +12,7 @@ public class Arrays {
         arrMass[4] = new int[]{1,1,1,1,1,1,10,1,1,1,1};
         arrMass[5] = new int[]{5,4,3,2,1,5,4,3,2,10,10};
         for (int i = 0; i < arrMass.length; i++) {
+            System.out.print("Массив №" + (i + 1) + ":  ");
             for (int j = 0; j < arrMass[i].length; j++) {
                 System.out.print(arrMass[i][j] + "  ");
             }
@@ -23,7 +24,7 @@ public class Arrays {
     }
     /**
      * Метод поиска элемента передаваемого массива, повторяющегося нечетное количество раз
-     * @param arr передаваемый методумассив
+     * @param arr передаваемый методу массив
      * @return возвращает искомый элемент массива
      */
     public static int arrCount(int[] arr) {
