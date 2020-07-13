@@ -8,7 +8,7 @@ public class AutoMode {
     public static int ringY = 0;
 
     public static void autoMove(int rings, int from, int to) {
-        int buff = 3 - from - to;
+        int buff = 3 - from - to; // Вычисление номера буферного стержня
 
         if (rings == 1) {
             for (int j = 0; j < ringsTotal; j++) {
