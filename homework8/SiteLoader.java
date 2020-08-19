@@ -27,6 +27,17 @@ public abstract class SiteLoader {
         }
     }
 
+    double rateIn = 0;
+    double rateOut = 0;
+
+    public double getRateIn() {
+        return rateIn;
+    }
+
+    public double getRateOut() {
+        return rateOut;
+    }
+
     /**
      * Метод для запуска загрузки курса валют
      * @param urlToSite урл по которому надо постучаться
