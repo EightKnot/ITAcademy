@@ -9,7 +9,7 @@ public abstract class EasySearchMain implements ISearchEngine {
         String fileContent = "";
         String[] words = {"война", "и", "мир"};
         Path fileName = Path.of("Война и мир_книга.txt");
-        String[] variWord = new String[7];
+        String[] variWord = new String[8];
         int sum = 0, localSum = 0;
 
         fileContent = Files.readString(fileName);

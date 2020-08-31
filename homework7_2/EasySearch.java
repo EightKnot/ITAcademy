@@ -14,7 +14,7 @@ public class EasySearch implements ISearchEngine {
     }
 
     public String[] arrOfWords(String word){
-        String[] variWord = new String[7];
+        String[] variWord = new String[8];
         variWord[0] = " " + word + " ";
         variWord[1] = " " + word + ".";
         variWord[2] = " " + word + ",";
@@ -22,7 +22,7 @@ public class EasySearch implements ISearchEngine {
         variWord[4] = " " + word + "?";
         variWord[5] = " " + word + ":";
         variWord[6] = " " + word + ";";
-        variWord[6] = word.substring(0, 1).toUpperCase().concat(word.substring(1)).concat(" ");
+        variWord[7] = word.substring(0, 1).toUpperCase().concat(word.substring(1)).concat(" ");
         return variWord;
     }
 

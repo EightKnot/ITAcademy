@@ -1,8 +1,9 @@
 package HomeWork6;
 
 import java.util.Arrays;
+import java.util.Objects;
 
-public class DataContainer<T> {
+public class DataContainer<T> implements Comparable<T> {
     public T[] storageBox;
 
     DataContainer(T[] initArr) {
@@ -54,7 +55,38 @@ public class DataContainer<T> {
         return false;
     }
 
+    int getIndex(T item) {
+        for (int i = 0; i < this.storageBox.length; i++) {
+            if (this.storageBox[i].equals(item)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     T[] incrArr(T[] currArr) {
         return Arrays.copyOf(currArr, (int) (currArr.length * 1.5));
+    }
+    /**
+     * Сортировка массива с использованием Comparable
+     * С помощью метода add не изменяя размер массива и без лишнего кода узнаем "полезную" длину массива
+     * И укорачиваем его, если есть пустые элементы
+     */
+    static void sort(DataContainer dataContainer) {
+        dataContainer.storageBox = Arrays.copyOf(dataContainer.storageBox, dataContainer.add(null));
+        Arrays.sort(dataContainer.storageBox);
+    }
+
+    void printArr() {
+        for (int i = 0; i < this.storageBox.length; i++) {
+            System.out.printf(this.get(i) + " | ");
+        }
+        System.out.println();
+    }
+
+    @Override
+    public int compareTo(T o) {
+//        return this.storageBox[this.getIndex(o) - 1].hashCode() - o.hashCode();
+        return  o.hashCode() - this.storageBox[this.getIndex(o) - 1].hashCode(); // По убыванию
     }
 }
