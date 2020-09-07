@@ -13,8 +13,10 @@ public abstract class EasySearchMain implements ISearchEngine {
         int sum = 0, localSum = 0;
 
         fileContent = Files.readString(fileName);
+        /**
+         * Поиск дедовским способом
+         */
         EasySearch engine = new EasySearch();
-
         for (String word : words) {
             sum = 0;
             variWord = engine.arrOfWords(word);
@@ -24,6 +26,14 @@ public abstract class EasySearchMain implements ISearchEngine {
                 System.out.println("В тексте слово \"" + s + "\" встречается " + localSum + " раз.");
             }
             System.out.println("Всего: " + sum + " раз.");
+        }
+        /**
+         * Поиск с использованием регулярных выражений
+         */
+        RegExSearch engineRegEx = new RegExSearch();
+        for (String word : words) {
+            localSum = engineRegEx.search(fileContent, word);
+            System.out.println("Слово \"" + word + "\" встречается " + localSum + " раз.");
         }
     }
 }
