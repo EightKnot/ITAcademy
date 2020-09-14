@@ -23,7 +23,7 @@ public class Teacher {
     public Teacher(String name) {
         this.namePars = new String[3];
         this.nameWholly = name;
-//        this.namePars = name.split("\\s+", 3); // переписать
+        this.namePars = name.split("\\s+", 3);
         this.subjects = new Subject[3];
 
         if (Math.random() > 0.7) {

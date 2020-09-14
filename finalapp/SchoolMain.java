@@ -25,7 +25,7 @@ public class SchoolMain {
                 difficulty = Integer.parseInt(playerInput);
                 break;
             }
-        } while (playerInput.toLowerCase().compareTo("exit") != 0);
+        } while (playerInput.toLowerCase().compareTo("exit") != 0); // доделать
 
         switch (difficulty) {
             case 1:
@@ -35,7 +35,7 @@ public class SchoolMain {
                 teachersSource = 17;
                 break;
             case 3:
-                teachersSource = 10;
+                teachersSource = 3;
                 break;
         }
 
@@ -43,26 +43,38 @@ public class SchoolMain {
          * Распределение преподавателей по предметам в ручном режиме
          */
         int temp = 0;
+        int count = 0;
         for (Subject subject : gamePlay.subjects) {
-            do {
-                gamePlay.teacherChoice(difficulty);
-                System.out.println("Выберите преподавателя для предмета " + subject.name + ":");
-                temp = scanner.nextInt() - 1;
-                if (temp < 0 || temp > gamePlay.numberOfСandidates - 1) {continue;}
-                if (gamePlay.teachTemp.get(temp).subjects[0] == null) {
-                    gamePlay.teachTemp.get(temp).subjects[0] = subject;
-                } else if (gamePlay.teachTemp.get(temp).subjects[1] == null) {
-                    gamePlay.teachTemp.get(temp).subjects[1] = subject;
-                } else {continue;}
+            if (count < teachersSource + 1) {
+                do {
+                    gamePlay.teacherChoice(difficulty);
+                    System.out.println("Выберите преподавателя для предмета " + subject.name + ":");
+                    temp = scanner.nextInt() - 1;
+                    if (temp < 0 || temp > gamePlay.numberOfСandidates - 1) {continue;}
+                    if (gamePlay.teachTemp.get(temp).subjects[0] == null) {
+                        gamePlay.teachTemp.get(temp).subjects[0] = subject;
+                        count++;
+                    } else if (gamePlay.teachTemp.get(temp).subjects[1] == null) {
+                        gamePlay.teachTemp.get(temp).subjects[1] = subject;
+                    } else {continue;}
 
-                if (subject.teacher[0] == null) {
-                    subject.teacher[0] = gamePlay.teachTemp.get(temp);
-                } else if (subject.teacher[1] == null) {
-                    subject.teacher[1] = gamePlay.teachTemp.get(temp);
-                } else {continue;}
-                break;
-            } while (true);
+                    if (subject.teacher[0] == null) {
+                        subject.teacher[0] = gamePlay.teachTemp.get(temp);
+                    } else if (subject.teacher[1] == null) {
+                        subject.teacher[1] = gamePlay.teachTemp.get(temp);
+                    } else {continue;}
+                    break;
+                } while (true);
+            } else {
+                for (int i = gamePlay.teachTemp.size() - 1; i >= 0; i--) {
+                    if (gamePlay.teachTemp.get(i).subjects[0] == null) {
+                        gamePlay.teachTemp.;
+                    }
+                }
+                count = Integer.MIN_VALUE;
+            }
         }
+
         // для отладки
 /*        System.out.println(gamePlay.teachers.length);
         gamePlay.teachers[0].printData();

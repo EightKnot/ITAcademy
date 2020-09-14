@@ -2,7 +2,7 @@ package FinalApp;
 
 public class Pupil{
     String name;
-    String nameStrip;
+    String[] namePars;
     String classNumber;
     Family family;
     Double averageBehaviorRating;
@@ -14,7 +14,8 @@ public class Pupil{
 
     Pupil(String name, String classNumber) {
         this.name = name;
-//        this.nameStrip = name.replaceAll("\\s+", ""); // заменить
+        this.namePars = new String[3];
+        this.namePars = name.split("\\s+", 3);
         this.classNumber = classNumber;
         this.averageBehaviorRating = Math.random() * 10;
         this.averageProgressRating = Math.random() * 10;
@@ -59,7 +60,7 @@ public class Pupil{
         final String ANSI_RESET = "\u001B[0m";
         return "Pupil{" +
                 ANSI_BLUE + "name='" + name + '\'' +
-                ANSI_RESET + ", nameStrip='" + nameStrip + '\'' +
+                ANSI_RESET + ", nameStrip='" + namePars + '\'' +
                 ANSI_BLUE + ", classNumber='" + classNumber + '\'' + "\n" +
                 ANSI_RESET + ", averageBehaviorRating=" + String.format("%.3f",averageBehaviorRating) +
                 ", averageProgressRating=" + String.format("%.3f",averageProgressRating) +

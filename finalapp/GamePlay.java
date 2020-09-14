@@ -54,18 +54,25 @@ public class GamePlay {
 //        System.out.println("nameList " + nameList.size());
         Teacher temp;
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 10 && j < teachTemp.size(); j++) {
+        int n = teachTemp.size() / 10;
+        int m, z = 0;
+        for (int i = 0; i < n; i++) {
+            if (i == n - 1 && teachTemp.size() % 10 != 0) {
+                z = teachTemp.size() % 10;
+            } else {
+                z = 10;
+            }
+            for (int j = 0; j < z; j++) {
                 temp = teachTemp.get(i * 10 + j);
                 System.out.printf("%-14s" + "|", (i * 10 + j + 1));
             }
             System.out.println();
-            for (int j = 0; j < 10 && j < teachTemp.size(); j++) {
+            for (int j = 0; j < z; j++) {
                 temp = teachTemp.get(i * 10 + j);
                 System.out.printf("%-14s" + "|", temp.namePars[0]);
             }
             System.out.println();
-            for (int j = 0; j < 10 && j < teachTemp.size(); j++) {
+            for (int j = 0; j < z; j++) {
                 temp = teachTemp.get(i * 10 + j);
                 if (temp.subjects[0] == null) {
                     System.out.printf("%-14s" + "|", "пусто");
@@ -74,7 +81,7 @@ public class GamePlay {
                 }
             }
             System.out.println();
-            for (int j = 0; j < 10 && j < teachTemp.size(); j++) {
+            for (int j = 0; j < z; j++) {
                 temp = teachTemp.get(i * 10 + j);
                 if (temp.subjects[1] == null) {
                     System.out.printf("%-14s" + "|", "пусто");
@@ -83,12 +90,12 @@ public class GamePlay {
                 }
             }
             System.out.println();
-            for (int j = 0; j < 10 && j < teachTemp.size(); j++) {
+            for (int j = 0; j < z; j++) {
                 temp = teachTemp.get(i * 10 + j);
                 System.out.printf("Балл: %-8.3f" + "|", temp.averageCertRating);
             }
             System.out.println();
-            for (int j = 0; j < 10 && j < teachTemp.size(); j++) {
+            for (int j = 0; j < z; j++) {
                 temp = teachTemp.get(i * 10 + j);
                 System.out.printf("$$: %-10.2f" + "|", temp.dailyCost);
             }
@@ -109,7 +116,7 @@ public class GamePlay {
                 line = reader.readLine();
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage() + "Необходимо запустить NamesLoaderMain!");
         } catch (IOException e) {
             e.printStackTrace();
         }
